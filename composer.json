@@ -1,40 +1,40 @@
 {
-    "name": "035media/seconds",
-    "description": "Convert all kinds of time periods to seconds.",
+    "name": "adevade/seconds",
+    "description": "Helpers for converting time to seconds.",
     "keywords": [
-        "035media",
+        "php",
+        "helpers",
+        "convert",
+        "time",
         "seconds"
     ],
-    "homepage": "https://github.com/035media/seconds",
+    "homepage": "https://github.com/adevade/seconds",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
             "name": "Andréas Lundgren",
-            "email": "andreas@035media.se",
-            "role": "Developer"
+            "email": "andreas@035media.se"
         }
     ],
     "require": {
-        "php": "^7.1"
+        "php": "^7.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^8.0"
     },
     "autoload": {
         "psr-4": {
-            "035media\\Seconds\\": "src"
+            "Adevade\\Seconds\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "035media\\Seconds\\Tests\\": "tests"
+            "Adevade\\Seconds\\Tests\\": "tests"
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
+        "test": "vendor/bin/phpunit"
     },
     "config": {
         "sort-packages": true
