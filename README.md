@@ -1,53 +1,60 @@
-# Very short description of the package
+# Seconds
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/035media/seconds.svg?style=flat-square)](https://packagist.org/packages/035media/seconds)
-[![Build Status](https://img.shields.io/travis/035media/seconds/master.svg?style=flat-square)](https://travis-ci.org/035media/seconds)
-[![Quality Score](https://img.shields.io/scrutinizer/g/035media/seconds.svg?style=flat-square)](https://scrutinizer-ci.com/g/035media/seconds)
-[![Total Downloads](https://img.shields.io/packagist/dt/035media/seconds.svg?style=flat-square)](https://packagist.org/packages/035media/seconds)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/adevade/seconds.svg?style=flat-square)](https://packagist.org/packages/adevade/seconds)
+[![Total Downloads](https://img.shields.io/packagist/dt/adevade/seconds.svg?style=flat-square)](https://packagist.org/packages/adevade/seconds)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Helpers for converting time to seconds.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require 035media/seconds
+composer require adevade/seconds
 ```
 
 ## Usage
 
-``` php
-// Usage description here
+```php
+use Adevade\Seconds\Seconds;
+
+Seconds::fromMinutes(2); // returns => (int) 120
 ```
 
-### Testing
+### Available methods
 
-``` bash
-composer test
+```php
+Seconds::fromMinutes($int);
+Seconds::fromHours($int);
+Seconds::fromDays($int);
+Seconds::fromWeeks($int);
+Seconds::fromMonths($int);
+Seconds::fromYears($int);
+
+Seconds::fromMinute();
+Seconds::fromHour();
+Seconds::fromDay();
+Seconds::fromWeek();
+Seconds::fromMonth();
+Seconds::fromYear();
 ```
 
-### Changelog
+### Available constants
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+```php
+Seconds::MINUTE;
+Seconds::HOUR;
+Seconds::DAY;
+Seconds::WEEK;
+Seconds::MONTH;
+Seconds::YEAR;
+```
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-### Security
-
-If you discover any security related issues, please email andreas@035media.se instead of using the issue tracker.
+> Months have an average length of 30.42 days.\
+> Years have an average length of 365.24 days.
 
 ## Credits
 
-- [Andréas Lundgren](https://github.com/035media)
-- [All Contributors](../../contributors)
+- [Andréas Lundgren](https://github.com/adevade)
 
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## PHP Package Boilerplate
-
-This package was generated using the [PHP Package Boilerplate](https://laravelpackageboilerplate.com).
+Idea came from [this tweet by @LasseRafn](https://twitter.com/LasseRafn/status/1225017098373685255). Thanks!
