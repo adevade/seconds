@@ -2,6 +2,20 @@
 
 namespace Adevade\Seconds;
 
+/**
+ * @method static int fromMinute()
+ * @method static int fromMinutes(int $seconds)
+ * @method static int fromHour()
+ * @method static int fromHours(int $seconds)
+ * @method static int fromDay()
+ * @method static int fromDays(int $seconds)
+ * @method static int fromWeek()
+ * @method static int fromWeeks(int $seconds)
+ * @method static int fromMonth()
+ * @method static int fromMonths(int $seconds)
+ * @method static int fromYear()
+ * @method static int fromYears(int $seconds)
+ */
 class Seconds
 {
     public const MINUTE = 60;
