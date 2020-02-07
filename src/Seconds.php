@@ -15,16 +15,16 @@ class Seconds
      * Return the calculated seconds.
      *
      * @param string $method
-     * @param array $arguments
+     * @param array $parameters
      * @return int
      */
-    public static function __callStatic($method, $arguments)
+    public static function __callStatic($method, $parameters)
     {
         if (static::isSingular($method)) {
             return static::getConstantFromMethod($method);
         }
 
-        return static::getConstantFromMethod($method) * $arguments[0];
+        return static::getConstantFromMethod($method) * $parameters[0];
     }
 
     /**
