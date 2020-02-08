@@ -1,7 +1,8 @@
 # Seconds
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/adevade/seconds.svg?style=flat-square)](https://packagist.org/packages/adevade/seconds)
-[![Total Downloads](https://img.shields.io/packagist/dt/adevade/seconds.svg?style=flat-square)](https://packagist.org/packages/adevade/seconds)
+[![Tests](https://github.com/adevade/seconds/workflows/Tests/badge.svg)](https://github.com/adevade/seconds)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/adevade/seconds.svg)](https://packagist.org/packages/adevade/seconds)
+[![Total Downloads](https://img.shields.io/packagist/dt/adevade/seconds.svg)](https://packagist.org/packages/adevade/seconds)
 
 Helpers for converting time to seconds.
 
