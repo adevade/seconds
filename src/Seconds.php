@@ -2,6 +2,9 @@
 
 namespace Adevade\Seconds;
 
+use BadMethodCallException;
+use InvalidArgumentException;
+
 /**
  * @method static int fromMinute()
  * @method static int fromMinutes(int $seconds)
@@ -31,11 +34,21 @@ class Seconds
      * @param string $method
      * @param array $parameters
      * @return int
+     *
+     * @throws \InvalidArgumentException
      */
     public static function __callStatic($method, $parameters)
     {
         if (static::isSingular($method)) {
             return static::getConstantFromMethodName($method);
+        }
+
+        if (!isset($parameters[0])) {
+            throw new InvalidArgumentException(static::class . '::' . $method . '(int $seconds) expects an integer.');
+        }
+
+        if (! is_int($parameters[0])) {
+            throw new InvalidArgumentException(static::class . '::' . $method . '(int $seconds) expects an integer.');
         }
 
         return static::getConstantFromMethodName($method) * $parameters[0];
@@ -57,12 +70,18 @@ class Seconds
      *
      * @param string $method
      * @return int
+     * 
+     * @throws \BadMethodCallException
      */
     protected static function getConstantFromMethodName($method)
     {
         $constant = preg_replace('/^from/', '', $method);
         $constant = preg_replace('/s$/', '', $constant);
         $constant = strtoupper($constant);
+
+        if (! defined(static::class."::{$constant}")) {
+            throw new BadMethodCallException(static::class.'::'.$method.'() does not exist.');
+        }
 
         return constant("static::{$constant}");
     }

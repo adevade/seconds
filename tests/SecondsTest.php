@@ -3,6 +3,8 @@
 namespace Adevade\Seconds\Tests;
 
 use Adevade\Seconds\Seconds;
+use BadMethodCallException;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class SecondsTest extends TestCase
@@ -71,5 +73,38 @@ class SecondsTest extends TestCase
 
         $this->assertSame(31556736, Seconds::fromYear());
         $this->assertSame(31556736, Seconds::fromYear(999));
+    }
+
+    /** @test */
+    function it_throws_an_exception_if_no_parameter_is_given()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            'Adevade\Seconds\Seconds::fromMinutes(int $seconds) expects an integer.'
+        );
+
+        Seconds::fromMinutes();
+    }
+
+    /** @test */
+    function it_throws_an_exception_if_parameter_is_not_an_integer()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            'Adevade\Seconds\Seconds::fromDays(int $seconds) expects an integer.'
+        );
+
+        Seconds::fromDays('4');
+    }
+
+    /** @test */
+    function it_throws_an_exception_if_method_does_not_exist()
+    {
+        $this->expectException(BadMethodCallException::class);
+        $this->expectExceptionMessage(
+            'Adevade\Seconds\Seconds::invalidMethod() does not exist.'
+        );
+
+        Seconds::invalidMethod(12);
     }
 }
