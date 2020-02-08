@@ -20,13 +20,11 @@ jobs:
         with: 
           php-version: ${{ matrix.php-version }}
           coverage: none
-          tools: composer, phpunit
+          tools: composer
           
-      - name: Composer
-        uses: php-actions/composer@v1
+      - name: Install Composer dependencies
+        run: composer install
         
-      - name: PHPUnit
-        uses: php-actions/phpunit@v1
-        with:
-          config: phpunit.xml.dist
-          
+      - name: Run PHPUnit
+        run: ./vendor/bin/phpunit
+        
