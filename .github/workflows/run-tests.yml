@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: ['7.1', '7.2', '7.3', '7.4', '8.0']
+        php-version: ['7.2', '7.3', '7.4', '8.0']
     
     steps:
       - name: Checkout
@@ -22,9 +22,14 @@ jobs:
           coverage: none
           tools: composer
           
+      - name: Cache Composer dependencies
+        uses: actions/cache@v1
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('composer.lock') }}
+          
       - name: Install Composer dependencies
         run: composer install
         
       - name: Run PHPUnit
         run: ./vendor/bin/phpunit
-        
