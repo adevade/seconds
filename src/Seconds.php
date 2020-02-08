@@ -35,10 +35,10 @@ class Seconds
     public static function __callStatic($method, $parameters)
     {
         if (static::isSingular($method)) {
-            return static::getConstantFromMethod($method);
+            return static::getConstantFromMethodName($method);
         }
 
-        return static::getConstantFromMethod($method) * $parameters[0];
+        return static::getConstantFromMethodName($method) * $parameters[0];
     }
 
     /**
@@ -58,7 +58,7 @@ class Seconds
      * @param string $method
      * @return int
      */
-    protected static function getConstantFromMethod($method)
+    protected static function getConstantFromMethodName($method)
     {
         $constant = preg_replace('/^from/', '', $method);
         $constant = preg_replace('/s$/', '', $constant);
