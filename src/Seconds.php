@@ -43,12 +43,14 @@ class Seconds
             return static::getConstantFromMethodName($method);
         }
 
-        if (!isset($parameters[0])) {
-            throw new InvalidArgumentException(static::class . '::' . $method . '(int $seconds) expects an integer.');
-        }
-
-        if (! is_int($parameters[0])) {
-            throw new InvalidArgumentException(static::class . '::' . $method . '(int $seconds) expects an integer.');
+        if (!isset($parameters[0]) || !is_int($parameters[0])) {
+            throw new InvalidArgumentException(
+                sprintf(
+                    '%s::%s(int $seconds) expects an integer.',
+                    static::class,
+                    $method
+                )
+            );
         }
 
         return static::getConstantFromMethodName($method) * $parameters[0];
@@ -70,7 +72,7 @@ class Seconds
      *
      * @param string $method
      * @return int
-     * 
+     *
      * @throws \BadMethodCallException
      */
     protected static function getConstantFromMethodName($method)
@@ -79,8 +81,10 @@ class Seconds
         $constant = preg_replace('/s$/', '', $constant);
         $constant = strtoupper($constant);
 
-        if (! defined(static::class."::{$constant}")) {
-            throw new BadMethodCallException(static::class.'::'.$method.'() does not exist.');
+        if (!defined("static::{$constant}")) {
+            throw new BadMethodCallException(
+                sprintf('%s::%s() does not exist.', static::class, $method)
+            );
         }
 
         return constant("static::{$constant}");
