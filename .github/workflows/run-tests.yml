@@ -21,15 +21,15 @@ jobs:
           php-version: ${{ matrix.php-version }}
           coverage: none
           tools: composer
-          
+      
+      - name: Install Composer dependencies
+        run: composer install
+            
       - name: Cache Composer dependencies
         uses: actions/cache@v1
         with:
           path: vendor
           key: composer-${{ hashFiles('composer.lock') }}
           
-      - name: Install Composer dependencies
-        run: composer install
-        
       - name: Run PHPUnit
         run: ./vendor/bin/phpunit
