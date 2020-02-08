@@ -1,0 +1,32 @@
+name: Run tests
+
+on: [push, pull_request]
+
+jobs:
+  run:
+    name: PHP ${{ matrix.php-version }}
+    
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['7.1', '7.2', '7.3', '7.4', '8.0']
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Setup PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v1
+        with: 
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+          tools: composer, phpunit
+          
+      - name: Composer
+        uses: php-actions/composer@v1
+        
+      - name: PHPUnit
+        uses: php-actions/phpunit@v1
+        with:
+          config: phpunit.xml.dist
+          
