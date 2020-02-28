@@ -7,17 +7,17 @@ use InvalidArgumentException;
 
 /**
  * @method static int fromMinute()
- * @method static int fromMinutes(int $seconds)
+ * @method static int fromMinutes(int $minutes)
  * @method static int fromHour()
- * @method static int fromHours(int $seconds)
+ * @method static int fromHours(int $hours)
  * @method static int fromDay()
- * @method static int fromDays(int $seconds)
+ * @method static int fromDays(int $days)
  * @method static int fromWeek()
- * @method static int fromWeeks(int $seconds)
+ * @method static int fromWeeks(int $weeks)
  * @method static int fromMonth()
- * @method static int fromMonths(int $seconds)
+ * @method static int fromMonths(int $months)
  * @method static int fromYear()
- * @method static int fromYears(int $seconds)
+ * @method static int fromYears(int $years)
  */
 class Seconds
 {
