@@ -25,12 +25,12 @@ Seconds::fromMinutes(2); // returns => (int) 120
 ### Available methods
 
 ```php
-Seconds::fromMinutes($seconds);
-Seconds::fromHours($seconds);
-Seconds::fromDays($seconds);
-Seconds::fromWeeks($seconds);
-Seconds::fromMonths($seconds);
-Seconds::fromYears($seconds);
+Seconds::fromMinutes($minutes = 5);
+Seconds::fromHours($hours = 12);
+Seconds::fromDays($days = 4);
+Seconds::fromWeeks($weeks = 2);
+Seconds::fromMonths($months = 6);
+Seconds::fromYears($years = 2);
 
 Seconds::fromMinute();
 Seconds::fromHour();
