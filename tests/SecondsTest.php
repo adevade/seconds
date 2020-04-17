@@ -2,7 +2,7 @@
 
 namespace Adevade\Seconds\Tests;
 
-use Adevade\Seconds\Seconds;
+use Adevade\Seconds;
 use BadMethodCallException;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -80,7 +80,7 @@ class SecondsTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
-            'Adevade\Seconds\Seconds::fromMinutes(int $seconds) expects an integer.'
+            'Adevade\Seconds::fromMinutes(int $seconds) expects an integer.'
         );
 
         Seconds::fromMinutes();
@@ -91,7 +91,7 @@ class SecondsTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
-            'Adevade\Seconds\Seconds::fromDays(int $seconds) expects an integer.'
+            'Adevade\Seconds::fromDays(int $seconds) expects an integer.'
         );
 
         Seconds::fromDays('4');
@@ -102,7 +102,7 @@ class SecondsTest extends TestCase
     {
         $this->expectException(BadMethodCallException::class);
         $this->expectExceptionMessage(
-            'Adevade\Seconds\Seconds::invalidMethod() does not exist.'
+            'Adevade\Seconds::invalidMethod() does not exist.'
         );
 
         Seconds::invalidMethod(12);

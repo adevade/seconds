@@ -1,6 +1,6 @@
 <?php
 
-namespace Adevade\Seconds;
+namespace Adevade;
 
 use BadMethodCallException;
 use InvalidArgumentException;

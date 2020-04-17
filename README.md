@@ -17,7 +17,7 @@ composer require adevade/seconds
 ## Usage
 
 ```php
-use Adevade\Seconds\Seconds;
+use Adevade\Seconds;
 
 Seconds::fromMinutes(2); // returns => (int) 120
 ```
