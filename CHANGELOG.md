@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 2.0.0 - 2020-04-17
+
+:boom: Breaking changes! New namespace. Run `composer dump-autoload` after update.
+
+### Changed
+
+- Change namespace to top level `Adevade`. Use `Adevade\Seconds::class` instead of `Adevade\Seconds\Seconds::class` in ^2.0.
+
 ## 1.1.0 - 2020-04-17
 
 ### Added
