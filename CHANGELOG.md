@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 1.1.0 - 2020-04-17
+
+### Added
+
+- Added support for PHPUnit `^8|^9`.
+
 ## [1.0.2] - 2020-02-28
 
 ### Changed
