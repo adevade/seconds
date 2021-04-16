@@ -80,7 +80,7 @@ class SecondsTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
-            'Adevade\Seconds::fromMinutes(int $seconds) expects an integer.'
+            'Adevade\Seconds::fromMinutes(int $minutes) expects an integer.'
         );
 
         Seconds::fromMinutes();
@@ -91,7 +91,7 @@ class SecondsTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
-            'Adevade\Seconds::fromDays(int $seconds) expects an integer.'
+            'Adevade\Seconds::fromDays(int $days) expects an integer.'
         );
 
         Seconds::fromDays('4');

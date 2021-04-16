@@ -46,9 +46,10 @@ class Seconds
         if (!isset($parameters[0]) || !is_int($parameters[0])) {
             throw new InvalidArgumentException(
                 sprintf(
-                    '%s::%s(int $seconds) expects an integer.',
+                    '%s::%s(int $%s) expects an integer.',
                     static::class,
-                    $method
+                    $method,
+                    str_replace('from', '', strtolower($method))
                 )
             );
         }
