@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 2.1.0 - 2021-04-16
+
+### Added
+
+- Support PHP 8.0.
+
+### Changed
+
+- Exception messages use correct variable names.
+
 ## 2.0.0 - 2020-04-17
 
 :boom: Breaking changes! New namespace. Run `composer dump-autoload` after update.
