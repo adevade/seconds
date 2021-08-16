@@ -58,4 +58,4 @@ Seconds::YEAR;
 
 - [Andréas Lundgren](https://github.com/adevade)
 
-Idea came from [this tweet by @LasseRafn](https://twitter.com/LasseRafn/status/1225017098373685255). Thanks!
+Idea came from a tweet by [@LasseRafn](https://twitter.com/LasseRafn). Thanks!
