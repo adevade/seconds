@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 3.0.0 - 2021-10-25
+
+### Removed
+
+- Drop support for PHP <= 7.3.
+- Drop support for PHPUnit 8.
+
 ## 2.1.0 - 2021-04-16
 
 ### Added

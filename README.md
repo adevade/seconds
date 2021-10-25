@@ -14,6 +14,14 @@ You can install the package via composer:
 composer require adevade/seconds
 ```
 
+### Supported PHP versions
+
+| Package | PHP        |
+| ------- | ---------- |
+| ^1.0    | ^7.2       |
+| ^2.1    | ^7.2\|^8.0 |
+| ^3.0    | ^7.4\|^8.0 |
+
 ## Usage
 
 ```php
