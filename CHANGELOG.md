@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Support PHP 8.0.
+- Support for PHP 8.0.
 
 ### Changed
 
