@@ -22,10 +22,15 @@ use InvalidArgumentException;
 class Seconds
 {
     public const MINUTE = 60;
+
     public const HOUR = 3600;
+
     public const DAY = 86400;
+
     public const WEEK = 604800;
+
     public const MONTH = 2628288; // 30.42 days
+
     public const YEAR = 31556736; // 365.24 days
 
     /**
@@ -39,7 +44,7 @@ class Seconds
             return static::getConstantFromMethodName($method);
         }
 
-        if (!isset($parameters[0]) || !is_int($parameters[0])) {
+        if (! isset($parameters[0]) || ! is_int($parameters[0])) {
             throw new InvalidArgumentException(
                 sprintf(
                     '%s::%s(int $%s) expects an integer.',
@@ -58,7 +63,7 @@ class Seconds
      */
     protected static function isSingular(string $method): bool
     {
-        return !preg_match('/s$/', $method);
+        return ! preg_match('/s$/', $method);
     }
 
     /**
@@ -72,7 +77,7 @@ class Seconds
         $constant = preg_replace('/s$/', '', $constant);
         $constant = strtoupper($constant);
 
-        if (!defined("static::{$constant}")) {
+        if (! defined("static::{$constant}")) {
             throw new BadMethodCallException(
                 sprintf('%s::%s() does not exist.', static::class, $method)
             );
