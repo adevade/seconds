@@ -31,13 +31,9 @@ class Seconds
     /**
      * Return the calculated seconds.
      *
-     * @param string $method
-     * @param array $parameters
-     * @return int
-     *
      * @throws \InvalidArgumentException
      */
-    public static function __callStatic($method, $parameters)
+    public static function __callStatic(string $method, array $parameters): int
     {
         if (static::isSingular($method)) {
             return static::getConstantFromMethodName($method);
@@ -59,11 +55,8 @@ class Seconds
 
     /**
      * Check if method is singular or plural.
-     *
-     * @param string $method
-     * @return boolean
      */
-    protected static function isSingular($method)
+    protected static function isSingular(string $method): bool
     {
         return !preg_match('/s$/', $method);
     }
@@ -71,12 +64,9 @@ class Seconds
     /**
      * Get constant from method name.
      *
-     * @param string $method
-     * @return int
-     *
      * @throws \BadMethodCallException
      */
-    protected static function getConstantFromMethodName($method)
+    protected static function getConstantFromMethodName(string $method): int
     {
         $constant = preg_replace('/^from/', '', $method);
         $constant = preg_replace('/s$/', '', $constant);
