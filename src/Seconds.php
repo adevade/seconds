@@ -31,10 +31,6 @@ class Seconds
     /**
      * Return the calculated seconds.
      *
-     * @param string $method
-     * @param array $parameters
-     * @return int
-     *
      * @throws \InvalidArgumentException
      */
     public static function __callStatic(string $method, array $parameters): int
@@ -59,9 +55,6 @@ class Seconds
 
     /**
      * Check if method is singular or plural.
-     *
-     * @param string $method
-     * @return boolean
      */
     protected static function isSingular(string $method): bool
     {
@@ -70,9 +63,6 @@ class Seconds
 
     /**
      * Get constant from method name.
-     *
-     * @param string $method
-     * @return int
      *
      * @throws \BadMethodCallException
      */
