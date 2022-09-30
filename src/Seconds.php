@@ -37,7 +37,7 @@ class Seconds
      *
      * @throws \InvalidArgumentException
      */
-    public static function __callStatic($method, $parameters)
+    public static function __callStatic(string $method, array $parameters): int
     {
         if (static::isSingular($method)) {
             return static::getConstantFromMethodName($method);
@@ -63,7 +63,7 @@ class Seconds
      * @param string $method
      * @return boolean
      */
-    protected static function isSingular($method)
+    protected static function isSingular(string $method): bool
     {
         return !preg_match('/s$/', $method);
     }
@@ -76,7 +76,7 @@ class Seconds
      *
      * @throws \BadMethodCallException
      */
-    protected static function getConstantFromMethodName($method)
+    protected static function getConstantFromMethodName(string $method): int
     {
         $constant = preg_replace('/^from/', '', $method);
         $constant = preg_replace('/s$/', '', $constant);
