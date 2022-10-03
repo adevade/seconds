@@ -5,8 +5,6 @@ namespace Adevade;
 use BadMethodCallException;
 use InvalidArgumentException;
 
-
-
 /**
  * @method static int fromMinute()
  * @method static int fromMinutes(int $minutes)
