@@ -4,14 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## 3.0.0 - 2021-10-25
+## [4.0.0] - 2022-10-03
+
+### Removed
+
+- Drop support for PHP 7.
+
+## [3.0.0] - 2021-10-25
 
 ### Removed
 
 - Drop support for PHP <= 7.3.
 - Drop support for PHPUnit 8.
 
-## 2.1.0 - 2021-04-16
+## [2.1.0] - 2021-04-16
 
 ### Added
 
@@ -21,7 +27,7 @@ All notable changes to this project will be documented in this file.
 
 - Exception messages use correct variable names.
 
-## 2.0.0 - 2020-04-17
+## [2.0.0] - 2020-04-17
 
 :boom: Breaking changes! New namespace. Run `composer dump-autoload` after update.
 
@@ -29,7 +35,7 @@ All notable changes to this project will be documented in this file.
 
 - Change namespace to top level `Adevade`. Use `Adevade\Seconds::class` instead of `Adevade\Seconds\Seconds::class` in ^2.0.
 
-## 1.1.0 - 2020-04-17
+## [1.1.0] - 2020-04-17
 
 ### Added
 
@@ -55,7 +61,12 @@ All notable changes to this project will be documented in this file.
 
 - Initial release
 
-[unreleased]: https://github.com/adevade/seconds/compare/1.0.2...HEAD
+[unreleased]: https://github.com/adevade/seconds/compare/4.0.0...HEAD
+[4.0.0]: https://github.com/adevade/seconds/compare/3.0.0...4.0.0
+[3.0.0]: https://github.com/adevade/seconds/compare/2.1.0...3.0.0
+[2.1.0]: https://github.com/adevade/seconds/compare/2.0.0...2.1.0
+[2.0.0]: https://github.com/adevade/seconds/compare/1.1.0...2.0.0
+[1.1.0]: https://github.com/adevade/seconds/compare/1.0.2...1.1.0
 [1.0.2]: https://github.com/adevade/seconds/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/adevade/seconds/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/adevade/seconds/releases/tag/1.0.0

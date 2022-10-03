@@ -21,6 +21,7 @@
         "php": "^8.0"
     },
     "require-dev": {
+        "laravel/pint": "^1.2",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
@@ -34,9 +35,12 @@
         }
     },
     "scripts": {
+        "format": "vendor/bin/pint",
         "test": "vendor/bin/phpunit"
     },
     "config": {
         "sort-packages": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

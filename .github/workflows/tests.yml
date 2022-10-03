@@ -1,39 +1,40 @@
 name: Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
-  run:
-    name: PHP ${{ matrix.php-version }}
+  tests:
+    name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
 
     runs-on: ubuntu-latest
+
     strategy:
+      fail-fast: true
       matrix:
-        php-version: ["8.0", "8.1"]
+        php: ["8.0", "8.1"]
+        stability: [prefer-lowest, prefer-stable]
+        include:
+          - php: "8.2"
+            stability: prefer-stable --ignore-platform-req=php+
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
+          php-version: ${{ matrix.php }}
+          ini-values: error_reporting=E_ALL
+          tools: composer:v2
           coverage: none
 
-      - name: Get Composer cache directory
-        id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Install dependencies
+        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress
 
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
-          restore-keys: ${{ runner.os }}-composer-
-
-      - name: Install Composer dependencies
-        run: composer install
-
-      - name: Run PHPUnit
-        run: ./vendor/bin/phpunit
+      - name: Execute tests
+        run: ./vendor/bin/phpunit --verbose
