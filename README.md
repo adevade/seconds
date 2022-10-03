@@ -21,6 +21,7 @@ composer require adevade/seconds
 | ^1.0    | ^7.2       |
 | ^2.1    | ^7.2\|^8.0 |
 | ^3.0    | ^7.4\|^8.0 |
+| ^4.0    | ^8.0       |
 
 ## Usage
 
