@@ -44,7 +44,7 @@ class Seconds
             return static::getConstantFromMethodName($method);
         }
 
-        if (! isset($parameters[0]) || ! is_int($parameters[0])) {
+        if (! static::hasValidParameters($parameters)) {
             throw new InvalidArgumentException(
                 sprintf(
                     '%s::%s(int $%s) expects an integer.',
@@ -64,6 +64,14 @@ class Seconds
     protected static function isSingular(string $method): bool
     {
         return ! str_ends_with($method, 's');
+    }
+
+    /**
+     * Check if the passed parameters are present and valid.
+     */
+    protected static function hasValidParameters(array $parameters): bool
+    {
+        return isset($parameters[0]) && is_int($parameters[0]);
     }
 
     /**
