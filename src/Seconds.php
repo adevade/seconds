@@ -63,7 +63,7 @@ class Seconds
      */
     protected static function isSingular(string $method): bool
     {
-        return ! preg_match('/s$/', $method);
+        return ! str_ends_with($method, 's');
     }
 
     /**
