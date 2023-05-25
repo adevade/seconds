@@ -67,7 +67,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release
 
-[unreleased]: https://github.com/adevade/seconds/compare/4.0.0...HEAD
+[unreleased]: https://github.com/adevade/seconds/compare/4.0.1...HEAD
+[4.0.1]: https://github.com/adevade/seconds/compare/4.0.0...4.0.1
 [4.0.0]: https://github.com/adevade/seconds/compare/3.0.0...4.0.0
 [3.0.0]: https://github.com/adevade/seconds/compare/2.1.0...3.0.0
 [2.1.0]: https://github.com/adevade/seconds/compare/2.0.0...2.1.0
