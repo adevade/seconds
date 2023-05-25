@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [4.0.1] - 2023-05-25
+
+### Changed
+
+- Refactor internals.
+
 ## [4.0.0] - 2022-10-03
 
 ### Removed
