@@ -1,11 +1,11 @@
-name: Formatting
+name: Run formatter
 
 on:
   push:
   pull_request:
 
 jobs:
-  formatting:
+  format:
     runs-on: ubuntu-latest
 
     steps:
